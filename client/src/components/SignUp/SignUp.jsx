@@ -12,7 +12,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const theme = createTheme();
 
-export default function LogIn() {
+export default function SignUp() {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		const data = new FormData(event.currentTarget);
@@ -37,7 +37,7 @@ export default function LogIn() {
 						<LockOutlinedIcon />
 					</Avatar>
 					<Typography component="h1" variant="h5">
-						Log in
+						Sign up
 					</Typography>
 					<Box
 						component="form"
@@ -48,11 +48,19 @@ export default function LogIn() {
 							margin="normal"
 							required
 							fullWidth
+							id="username"
+							label="User Name"
+							name="username"
+							autoComplete="username"
+						/>
+						<TextField
+							margin="normal"
+							required
+							fullWidth
 							id="email"
 							label="Email Address"
 							name="email"
 							autoComplete="email"
-							autoFocus
 						/>
 						<TextField
 							margin="normal"
@@ -62,20 +70,20 @@ export default function LogIn() {
 							label="Password"
 							type="password"
 							id="password"
-							autoComplete="current-password"
+							autoComplete="new-password"
 						/>
 						<FormControlLabel
 							control={
-								<Checkbox value="remember" color="primary" />
+								<Checkbox value="acceptTerms" color="primary" />
 							}
-							label="Remember me"
+							label="I agree to the terms of service."
 						/>
 						<Button
 							type="submit"
 							fullWidth
 							variant="contained"
 							sx={{ mt: 3, mb: 2 }}>
-							Sign In
+							Sign Up
 						</Button>
 					</Box>
 				</Box>
