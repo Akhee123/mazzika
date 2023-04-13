@@ -15,7 +15,7 @@ const theme = createTheme();
 export default function LogIn() {
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		const data = new FormData(event.currentTarget);
+		const data = new FormData(event.target);
 		console.log({
 			email: data.get('email'),
 			password: data.get('password'),

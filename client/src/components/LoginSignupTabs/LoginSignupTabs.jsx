@@ -17,11 +17,7 @@ function TabPanel(props) {
 			id={`simple-tabpanel-${index}`}
 			aria-labelledby={`simple-tab-${index}`}
 			{...other}>
-			{value === index && (
-				<Box sx={{ p: 3 }}>
-					<Typography>{children}</Typography>
-				</Box>
-			)}
+			{value === index && <Box sx={{ p: 3 }}>{children}</Box>}
 		</div>
 	);
 }
@@ -49,7 +45,11 @@ export default function LoginSignupTabs() {
 	return (
 		<Box sx={{ mt: 8 }}>
 			<Box>
-				<Tabs value={value} aria-label="basic tabs example" centered>
+				<Tabs
+					value={value}
+					onChange={handleChange}
+					aria-label="basic tabs example"
+					centered>
 					<Tab label="Log In" {...a11yProps(0)} />
 					<Tab label="Sign Up" {...a11yProps(1)} />
 				</Tabs>
